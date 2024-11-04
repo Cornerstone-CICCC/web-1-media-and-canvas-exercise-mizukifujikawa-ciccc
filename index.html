@@ -1,23 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Exercise</title>
-</head>
-<body>
-  <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Media Exercise</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- AUDIO HTML GOES HERE -->
+      <audio controls autoplay muted loop>
+        <source src="assets/audio/piano.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+      <!-- VIDEO HTML GOES HERE -->
+      <video width="320" height="240" poster="assets/images/poster.jpg" controls muted>
+        <source src="assets/video/ocean.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!-- IMAGE MAP HTML GOES HERE-->
+      <img src="assets/images/fruit_table.jpg" alt="fruits" usemap="#fruits" width="600" />
+      <map name="fruits">
+        <area
+          shape="rect"
+          coords="50,50,300,600"
+          alt="lavender"
+          href="https://en.wikipedia.org/wiki/Lavandula"
+        />
+        <area
+          shape="rect"
+          coords="350,350,600,650"
+          alt="oranges"
+          href="https://en.wikipedia.org/wiki/Orange_(fruit)"
+        />
+        <area
+          shape="circle"
+          coords="40,200,100"
+          alt="coffee"
+          href="https://en.wikipedia.org/wiki/Coffee"
+        />
+      </map>
+      <!-- CANVAS HTML GOES HERE -->
+      <canvas id="myCanvas" width="300" height="500" style="border: 1px solid grey"></canvas>
+    </div>
 
-    <!-- VIDEO HTML GOES HERE -->
+    <script>
+      /* CANVAS JAVASCRIPT GOES HERE */
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d");
+      context.strokeStyle = "red";
+      context.linewidth = 5;
+      context.beginPath();
+      context.moveTo(50, 50);
+      context.lineTo(50, 450);
+      context.stroke();
 
-    <!-- IMAGE MAP HTML GOES HERE-->
+      context.strokeStyle = "blue";
+      context.linewidth = 5;
+      context.beginPath();
+      context.moveTo(50, 450);
+      context.lineTo(250, 450);
+      context.stroke();
 
-    <!-- CANVAS HTML GOES HERE -->
-  </div>
+      context.strokeStyle = "green";
+      context.linewidth = 5;
+      context.beginPath();
+      context.moveTo(250, 450);
+      context.lineTo(250, 50);
+      context.stroke();
 
-  <script>
-    /* CANVAS JAVASCRIPT GOES HERE */
-  </script>
-</body>
+      context.strokeStyle = "yellow";
+      context.linewidth = 5;
+      context.beginPath();
+      context.moveTo(250, 50);
+      context.lineTo(50, 50);
+      context.stroke();
+    </script>
+  </body>
 </html>
